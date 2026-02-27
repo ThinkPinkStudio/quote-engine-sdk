@@ -1,0 +1,151 @@
+{
+  "name": "@thinkpinkstudio/quote-engine-sdk",
+  "version": "1.0.2",
+  "description": "White-label SDK for ThinkPink Quote Engine - Generate AI-powered project quotes",
+  "author": "ThinkPink Studio",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.esm.js",
+      "require": "./dist/react/index.js"
+    },
+    "./nextjs": {
+      "types": "./dist/nextjs/index.d.ts",
+      "import": "./dist/nextjs/index.esm.js",
+      "require": "./dist/nextjs/index.js"
+    },
+    "./vue": {
+      "types": "./dist/vue/index.d.ts",
+      "import": "./dist/vue/index.esm.js",
+      "require": "./dist/vue/index.js"
+    },
+    "./angular": {
+      "types": "./dist/angular/index.d.ts",
+      "import": "./dist/angular/index.esm.js",
+      "require": "./dist/angular/index.js"
+    },
+    "./svelte": {
+      "types": "./dist/svelte/index.d.ts",
+      "import": "./dist/svelte/index.esm.js",
+      "require": "./dist/svelte/index.js"
+    },
+    "./astro": {
+      "types": "./dist/astro/index.d.ts",
+      "import": "./dist/astro/index.esm.js",
+      "require": "./dist/astro/index.js"
+    },
+    "./react-native": {
+      "types": "./dist/react-native/index.d.ts",
+      "import": "./dist/react-native/index.esm.js",
+      "require": "./dist/react-native/index.js"
+    },
+    "./electron": {
+      "types": "./dist/electron/index.d.ts",
+      "import": "./dist/electron/index.esm.js",
+      "require": "./dist/electron/index.js"
+    },
+    "./vanilla": {
+      "types": "./dist/vanilla/index.d.ts",
+      "import": "./dist/vanilla/index.esm.js",
+      "require": "./dist/vanilla/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "clean": "rm -rf dist",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "prepublishOnly": "npm run clean && npm run test:run && npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "react-native": ">=0.70.0",
+    "vue": ">=3.0.0",
+    "@angular/core": ">=14.0.0",
+    "svelte": ">=3.0.0",
+    "electron": ">=22.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    },
+    "@angular/core": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    },
+    "electron": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@angular/core": "^18.0.0",
+    "@testing-library/dom": "^10.0.0",
+    "@testing-library/jest-dom": "^6.4.0",
+    "@testing-library/react": "^15.0.0",
+    "@testing-library/user-event": "^14.5.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "electron": "^31.0.0",
+    "happy-dom": "^14.0.0",
+    "msw": "^2.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "svelte": "^4.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.4.0",
+    "vue": "^3.4.0"
+  },
+  "keywords": [
+    "quote-engine",
+    "thinkpink",
+    "ai-quotes",
+    "project-estimation",
+    "white-label",
+    "sdk",
+    "react",
+    "vue",
+    "angular",
+    "svelte",
+    "astro",
+    "react-native",
+    "electron",
+    "flutter"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thinkpinkstudio/quote-engine-sdk"
+  },
+  "homepage": "https://thinkpinkstudio.it"
+}

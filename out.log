@@ -1,0 +1,340 @@
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+ RUN  v1.6.1 /Volumes/Dock/Sviluppo/ThinkPinkStudio/quote-engine
+
+stdout | src/__tests__/core/client.test.ts > QuoteEngineClient > constructor > should set debug mode
+[QuoteEngine] QuoteEngineClient initialized
+
+stdout | src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should send message and receive streaming response
+[QuoteEngine] QuoteEngineClient initialized
+[QuoteEngine] Starting new chat session
+[QuoteEngine] Sending message { content: 'Hello...' }
+
+ ❯ src/__tests__/core/client.test.ts  (53 tests | 11 failed) 131591ms
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should send message and receive streaming response
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should emit messageSent and messageReceived events
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should add messages to session
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should generate quote from conversation
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should emit quoteGenerated event
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should set session status to completed
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > getCurrentQuote > should return current quote after generation
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > initPayment > should initialize payment and return client secret
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > initPayment > should emit paymentStart event
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > confirmPayment > should confirm payment
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > confirmPayment > should emit paymentCompleted event
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should send message and receive streaming response
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should emit messageSent and messageReceived events
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should add messages to session
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should generate quote from conversation
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should emit quoteGenerated event
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should set session status to completed
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > getCurrentQuote > should return current quote after generation
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > initPayment > should initialize payment and return client secret
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > initPayment > should emit paymentStart event
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > confirmPayment > should confirm payment
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > confirmPayment > should emit paymentCompleted event
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 11 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should send message and receive streaming response". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should emit messageSent and messageReceived events". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should add messages to session". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should generate quote from conversation". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should emit quoteGenerated event". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should set session status to completed". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should return current quote after generation". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should initialize payment and return client secret". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should emit paymentStart event". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should confirm payment". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: response.clone is not a function
+ ❯ Object.respondWith node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:162:34
+ ❯ _RequestController.respondWith node_modules/@mswjs/interceptors/src/RequestController.ts:83:17
+ ❯ _Emitter.<anonymous> node_modules/msw/src/node/SetupServerCommonApi.ts:94:22
+ ❯ emitAsync node_modules/@mswjs/interceptors/src/utils/emitAsync.ts:23:5
+ ❯ node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:123:5
+ ❯ until node_modules/@open-draft/until/src/until.ts:23:18
+ ❯ handleRequest node_modules/@mswjs/interceptors/src/utils/handleRequest.ts:112:18
+ ❯ globalThis.fetch node_modules/@mswjs/interceptors/src/interceptors/fetch/index.ts:185:7
+ ❯ QuoteEngineClient.fetch src/core/client.ts:820:26
+    818| 
+    819|       try {
+    820|         const response = await fetch(url, {
+       |                          ^
+    821|           ...options,
+    822|           headers,
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:266:22
+
+This error originated in "src/__tests__/core/client.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "should emit paymentCompleted event". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ Test Files  1 failed (1)
+      Tests  11 failed | 42 passed (53)
+     Errors  11 errors
+   Start at  23:22:51
+   Duration  132.11s (transform 49ms, setup 194ms, collect 30ms, tests 131.59s, environment 110ms, prepare 55ms)
+

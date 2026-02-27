@@ -1,0 +1,483 @@
+
+> @thinkpinkstudio/quote-engine-sdk@1.0.0 test:run
+> vitest run
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+ RUN  v1.6.1 /Volumes/Dock/Sviluppo/ThinkPinkStudio/quote-engine
+
+ ✓ src/__tests__/core/theme.snapshot.test.ts  (12 tests) 5ms
+ ❯ src/__tests__/core/api-keys.test.ts  (40 tests | 4 failed) 17ms
+   ❯ src/__tests__/core/api-keys.test.ts > API Keys Module > getApiKeyPermissions > should return webhook permissions for webhook scope
+     → expected false to be true // Object.is equality
+   ❯ src/__tests__/core/api-keys.test.ts > API Keys Module > getApiKeyPermissions > should return payment permissions for payment scope
+     → expected false to be true // Object.is equality
+   ❯ src/__tests__/core/api-keys.test.ts > API Keys Module > maskApiKey > should mask the identifier portion
+     → Invalid Chai property: toEndWith
+   ❯ src/__tests__/core/api-keys.test.ts > API Keys Module > maskApiKey > should respect visibleChars parameter
+     → Invalid Chai property: toEndWith
+ ✓ src/__tests__/core/theme-styles.test.ts  (42 tests) 15ms
+ ✓ src/__tests__/core/webhooks.test.ts  (23 tests) 24ms
+stdout | src/__tests__/core/client.test.ts > QuoteEngineClient > constructor > should set debug mode
+[QuoteEngine] QuoteEngineClient initialized
+
+ ❯ src/__tests__/core/utils.test.ts  (60 tests | 1 failed) 51ms
+   ❯ src/__tests__/core/utils.test.ts > formatCurrency > should format currency with default EUR/IT locale
+     → expected '1234,56 €' to match /1[.,]234[.,]56/
+stderr | src/__tests__/react/hooks.test.tsx > useQuoteEngineContext > should throw error when used outside provider
+The above error occurred in the <TestComponent> component:
+
+    at TestComponent (/Volumes/Dock/Sviluppo/ThinkPinkStudio/quote-engine/node_modules/@testing-library/react/dist/pure.js:307:5)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+ ✓ src/__tests__/react/hooks.test.tsx  (37 tests) 84ms
+stderr | src/__tests__/vanilla/widget.test.ts > QuoteEngineWidget > event handling > should send message on Enter key
+[QuoteEngine] Invalid state: ReadableStream is locked
+
+stderr | src/__tests__/vanilla/widget.test.ts > QuoteEngineWidget > event handling > should close on close button click
+[QuoteEngine] Invalid state: ReadableStream is locked
+
+ ✓ src/__tests__/vanilla/widget.test.ts  (37 tests) 135ms
+ ❯ src/__tests__/core/client.test.ts  (53 tests | 17 failed) 24499ms
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should send message and receive streaming response
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should throw error when no session exists
+     → expected TypeError: Invalid state: ReadableStream … { code: '…' } to match object { code: 'SESSION_EXPIRED' }
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should emit messageSent and messageReceived events
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should add messages to session
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > getSession > should return null when no session exists
+     → expected { id: '1772142248981-3obb4d0', …(4) } to be null
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should generate quote from conversation
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should throw error when no session exists
+     → promise resolved "{ id: 'quote-123', …(8) }" instead of rejecting
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should emit quoteGenerated event
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should set session status to completed
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > getCurrentQuote > should return null when no quote exists
+     → expected { id: 'quote-123', …(8) } to be null
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > getCurrentQuote > should return current quote after generation
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > initPayment > should initialize payment and return client secret
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > initPayment > should emit paymentStart event
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > confirmPayment > should confirm payment
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > confirmPayment > should emit paymentCompleted event
+     → Invalid state: ReadableStream is locked
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > error handling > should handle rate limiting (429)
+     → Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ❯ src/__tests__/core/client.test.ts > QuoteEngineClient > error handling > should handle network timeout
+     → expected TypeError: Cannot read properties of unde… to match object { code: 'NETWORK_ERROR', …(1) }
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 22 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/core/api-keys.test.ts > API Keys Module > getApiKeyPermissions > should return webhook permissions for webhook scope
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/__tests__/core/api-keys.test.ts:151:36
+    149|       expect(perms.chat).toBe(false)
+    150|       expect(perms.generateQuote).toBe(false)
+    151|       expect(perms.manageWebhooks).toBe(true)
+       |                                    ^
+    152|     })
+    153| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/22]⎯
+
+ FAIL  src/__tests__/core/api-keys.test.ts > API Keys Module > getApiKeyPermissions > should return payment permissions for payment scope
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/__tests__/core/api-keys.test.ts:157:31
+    155|       const perms = getApiKeyPermissions(validLivePaymentKey)
+    156| 
+    157|       expect(perms.readQuote).toBe(true)
+       |                               ^
+    158|       expect(perms.initPayment).toBe(true)
+    159|       expect(perms.confirmPayment).toBe(true)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/22]⎯
+
+ FAIL  src/__tests__/core/api-keys.test.ts > API Keys Module > maskApiKey > should mask the identifier portion
+Error: Invalid Chai property: toEndWith
+ ❯ src/__tests__/core/api-keys.test.ts:290:20
+    288|       expect(masked).toContain('qe_live_full_')
+    289|       expect(masked).toContain('****')
+    290|       expect(masked).toEndWith('l012')
+       |                    ^
+    291|     })
+    292| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/22]⎯
+
+ FAIL  src/__tests__/core/api-keys.test.ts > API Keys Module > maskApiKey > should respect visibleChars parameter
+Error: Invalid Chai property: toEndWith
+ ❯ src/__tests__/core/api-keys.test.ts:296:20
+    294|       const masked = maskApiKey(validLiveFullKey, 6)
+    295| 
+    296|       expect(masked).toEndWith('jkl012')
+       |                    ^
+    297|     })
+    298| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should send message and receive streaming response
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:188:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should throw error when no session exists
+AssertionError: expected TypeError: Invalid state: ReadableStream … { code: '…' } to match object { code: 'SESSION_EXPIRED' }
+
+- Expected
++ Received
+
+  Object {
+-   "code": "SESSION_EXPIRED",
++   "code": "ERR_INVALID_STATE",
+  }
+
+ ❯ src/__tests__/core/client.test.ts:200:7
+    198|       const client = createClient()
+    199| 
+    200|       await expect(client.sendMessage('Hello')).rejects.toMatchObject({
+       |       ^
+    201|         code: 'SESSION_EXPIRED',
+    202|       })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should emit messageSent and messageReceived events
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:213:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > sendMessage > should add messages to session
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:222:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > getSession > should return null when no session exists
+AssertionError: expected { id: '1772142248981-3obb4d0', …(4) } to be null
+ ❯ src/__tests__/core/client.test.ts:250:35
+    248|     it('should return null when no session exists', () => {
+    249|       const client = createClient()
+    250|       expect(client.getSession()).toBeNull()
+       |                                   ^
+    251|     })
+    252| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should generate quote from conversation
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:286:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should throw error when no session exists
+AssertionError: promise resolved "{ id: 'quote-123', …(8) }" instead of rejecting
+
+- Expected
++ Received
+
+- [Error: rejected promise]
++ Object {
++   "contract": Object {
++     "status": "pending",
++   },
++   "createdAt": "2026-02-26T21:44:08.850Z",
++   "customer": Object {
++     "company": "ACME Inc",
++     "email": "john@example.com",
++     "name": "John Doe",
++   },
++   "escrow": Object {
++     "amountHeld": 0,
++     "amountReleased": 0,
++     "platformFee": 0,
++     "releases": Array [],
++   },
++   "expiresAt": "2026-03-28T21:44:08.854Z",
++   "id": "quote-123",
++   "pricing": Object {
++     "breakdown": Array [
++       Object {
++         "amount": 4000,
++         "category": "Design",
++         "description": "UI/UX Design",
++         "hours": 40,
++         "rate": 100,
++       },
++       Object {
++         "amount": 8000,
++         "category": "Development",
++         "description": "Frontend Dev",
++         "hours": 80,
++         "rate": 100,
++       },
++     ],
++     "deposit": Object {
++       "amount": 4392,
++       "percentage": 30,
++     },
++     "discounts": Array [],
++     "milestones": Array [],
++     "subtotal": 12000,
++     "subtotalAfterDiscounts": 12000,
++     "total": 14640,
++     "vatAmount": 2640,
++     "vatRate": 22,
++   },
++   "quoteNumber": "QE-2025-001",
++   "status": "draft",
++ }
+
+ ❯ src/__tests__/core/client.test.ts:298:42
+    296|       const client = createClient()
+    297| 
+    298|       await expect(client.generateQuote()).rejects.toMatchObject({
+       |                                          ^
+    299|         code: 'SESSION_EXPIRED',
+    300|       })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should emit quoteGenerated event
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:317:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > generateQuote > should set session status to completed
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:326:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > getCurrentQuote > should return null when no quote exists
+AssertionError: expected { id: 'quote-123', …(8) } to be null
+ ❯ src/__tests__/core/client.test.ts:353:40
+    351|     it('should return null when no quote exists', () => {
+    352|       const client = createClient()
+    353|       expect(client.getCurrentQuote()).toBeNull()
+       |                                        ^
+    354|     })
+    355| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > getCurrentQuote > should return current quote after generation
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:359:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > initPayment > should initialize payment and return client secret
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:392:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > initPayment > should emit paymentStart event
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:408:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > confirmPayment > should confirm payment
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:420:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > confirmPayment > should emit paymentCompleted event
+TypeError: Invalid state: ReadableStream is locked
+ ❯ QuoteEngineClient.streamChat src/core/client.ts:288:35
+    286| 
+    287|     // Handle streaming response
+    288|     const reader = response.body?.getReader()
+       |                                   ^
+    289|     if (!reader) {
+    290|       throw this.createError('CHAT_ERROR', 'No response body')
+ ❯ QuoteEngineClient.sendMessage src/core/client.ts:229:32
+ ❯ src/__tests__/core/client.test.ts:434:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'ERR_INVALID_STATE' }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > error handling > should handle rate limiting (429)
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/22]⎯
+
+ FAIL  src/__tests__/core/client.test.ts > QuoteEngineClient > error handling > should handle network timeout
+AssertionError: expected TypeError: Cannot read properties of unde… to match object { code: 'NETWORK_ERROR', …(1) }
+
+- Expected
++ Received
+
+- Object {
+-   "code": "NETWORK_ERROR",
+-   "message": "Request timed out",
+- }
++ [TypeError: Cannot read properties of undefined (reading 'ok')]
+
+ ❯ src/__tests__/core/client.test.ts:597:7
+    595|       )
+    596| 
+    597|       await expect(client.validateKey()).rejects.toMatchObject({
+       |       ^
+    598|         code: 'NETWORK_ERROR',
+    599|         message: 'Request timed out',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/22]⎯
+
+ FAIL  src/__tests__/core/utils.test.ts > formatCurrency > should format currency with default EUR/IT locale
+AssertionError: expected '1234,56 €' to match /1[.,]234[.,]56/
+
+- Expected: 
+/1[.,]234[.,]56/
+
++ Received: 
+"1234,56 €"
+
+ ❯ src/__tests__/core/utils.test.ts:31:20
+     29|     const result = formatCurrency(1234.56)
+     30|     // Use regex to match parts because some environments use non-brea…
+     31|     expect(result).toMatch(/1[.,]234[.,]56/)
+       |                    ^
+     32|     expect(result).toContain('€')
+     33|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/22]⎯
+
+ Test Files  3 failed | 5 passed (8)
+      Tests  22 failed | 282 passed (304)
+   Start at  22:44:08
+   Duration  25.25s (transform 475ms, setup 2.13s, collect 729ms, tests 24.83s, environment 1.48s, prepare 672ms)
+
